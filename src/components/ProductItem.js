@@ -4,7 +4,7 @@ import React from 'react';
 const productItem = () => {
 
   return (
-    <section className=''>
+    <section className='product-section'>
     
     </section>
   )
