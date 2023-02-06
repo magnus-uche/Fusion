@@ -1,14 +1,10 @@
-import React from 'react';
-import CartQuantity from './CartQuantity';
+import React from 'react'
 import { useGlobalContext } from '../Context';
-
-const AddCart = () => {
-const {addCart} = useGlobalContext();
-
+const AddCart = ({id, amount}) => {
+const {addCart, increase, decrease,price, products, searchTerm} = useGlobalContext();
   return (
-    <section className="addcart-section">
-         <button className="btn btn-primary" onClick={addCart}>Add to Cart</button>
-         <CartQuantity/>
+    <section className="addcart_section">
+         <button className="btn btn-primary" onClick={()=>addCart(id)}>Add to Cart</button> 
          </section>
   )
 }
