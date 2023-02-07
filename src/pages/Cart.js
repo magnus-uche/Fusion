@@ -5,7 +5,8 @@ import { useGlobalContext } from '../Context';
 
 const Cart = () => {
 const {cartProduct, total} = useGlobalContext();
-console.log('cartProduct :>> ', cartProduct);
+
+console.log(cartProduct);
 
 if(cartProduct.length >= 1){
     return (
