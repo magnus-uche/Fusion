@@ -11,13 +11,13 @@ const Nav = () => {
     <nav className="navbar">
       <div className="nav-center">
         <li>
-          <Link to="/home" className="logo">
+          <Link to="/" className="logo">
             Kundom
           </Link>
         </li>
         <ul className="nav-links">
           <li className={currentRoute.includes("home") ? "tab active" : "tab"}>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
 
           <li className={currentRoute.includes("men") ? "tab active" : "tab"}>
@@ -34,9 +34,8 @@ const Nav = () => {
             <Link to="/electronics">Electronics</Link>
           </li>
 
-          <li
-            className={currentRoute.includes("others") ? "tab active" : "tab"}>
-            <Link to="/others">Jewelery</Link>
+          <li className={currentRoute.includes("jewelery") ? "tab active" : "tab"}>
+            <Link to="/jewelery">Jewelery</Link>
           </li>
 
           <li className={currentRoute.includes("about") ? "tab active" : "tab"}>

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import AddCart from "../components/AddCart";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context";
+import Loading from "../components/Loading";
 
 const url = "https://fakestoreapi.com/products/1";
 
@@ -50,6 +51,7 @@ const ProductInfo = () => {
   if(loading){
     return (
       <section className="loader"> 
+      <Loading/>
       </section>
     )
   };

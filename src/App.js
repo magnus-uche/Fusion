@@ -12,24 +12,27 @@ import Women from './pages/Women';
 import Electronics from './pages/Electronics';
 import Jewelery from './pages/Jewelery';
 import { useGlobalContext } from './Context';
-
+import Loading from './components/Loading';
 
 function App() {
  const {isLoading} = useGlobalContext()
 
   if(isLoading){
-    return <div className='loader' >
-    <h2>loading..</h2> 
-    <p>please wait...</p>
+    return <div className='loader'>
+    <Loading/>
     </div>
+   
   }
+
   return (
     <Router>
     <Nav/>
       <Routes>
-      <Route path='/home' element={<Home/>}/>
+      <Route path='/' element={<Home/>}/>
       <Route path='men' element={<ForMen/>}/>
-      
+      <Route path='come' element={<Women/>}/>
+      <Route path='electronics' element={<Electronics/>}/>
+      <Route path='jewelery' element={<Jewelery/>}/>
       <Route  path='about' element={<About/>}/>
       <Route  path='products/:id' element={<ProductInfo/>}/>
       <Route path='cart' element={<Cart/>}/>

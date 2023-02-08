@@ -4,7 +4,7 @@ import { useGlobalContext } from '../Context';
 
 const Jewelery = () => {
     const {products} = useGlobalContext()
-    const jewelery = products.finds((items)=> items.category === 'jewelery')
+    const jewelery = products.filter((items)=> items.category === 'jewelery')
 
   return (
     <section>
@@ -12,13 +12,13 @@ const Jewelery = () => {
     <h1>Jewelery</h1>
     </div>
     <div className="products-center">
+    {jewelery.map((item)=>{
+      const {id} = item
+      return <Product key={id} {...item}/>
+    })}
     </div>
     </section>
   )
 }
 
 export default Jewelery
-    // {jewelery.map((item)=>{
-    //   const {id} = item
-    //   return <Product key={id} {...item}/>
-    // })}
