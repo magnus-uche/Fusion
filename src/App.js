@@ -12,21 +12,27 @@ import Women from './pages/Women';
 import Electronics from './pages/Electronics';
 import Jewelery from './pages/Jewelery';
 import { useGlobalContext } from './Context';
+import SideBar from './components/SideBar';
 import Loading from './components/Loading';
+import Categories from './components/Categories';
+import User from './components/User';
+
 
 function App() {
- const {isLoading} = useGlobalContext()
-
+  const {isLoading} = useGlobalContext();
+  
   if(isLoading){
     return <div className='loader'>
     <Loading/>
     </div>
    
-  }
+  };
 
   return (
     <Router>
     <Nav/>
+    <SideBar/>
+    <Categories/>
       <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='men' element={<ForMen/>}/>
@@ -36,10 +42,11 @@ function App() {
       <Route  path='about' element={<About/>}/>
       <Route  path='products/:id' element={<ProductInfo/>}/>
       <Route path='cart' element={<Cart/>}/>
+      <Route path='user' element={<User/>}/>
       <Route path='*' element={<Error/>}/>
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

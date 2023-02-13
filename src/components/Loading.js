@@ -12,7 +12,7 @@ const Loading = () => {
     speedMultiplier={1}
     />
     </div>
-  )
-}
+  );
+};
 
 export default Loading;

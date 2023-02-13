@@ -5,6 +5,7 @@ import { useGlobalContext } from '../Context';
 
 const ProductItem = () => {
 const { products } = useGlobalContext();
+console.log(products )
 return (
     <section className='section'>
     <div className="section-title">

@@ -1,9 +1,9 @@
 import React from 'react';
 import Product from '../components/Product';
+import { useState } from 'react';
 import { useGlobalContext } from '../Context';
 
 const ForMen = () => {
-
 const {products} = useGlobalContext();
 const forMen = products.filter((item)=> item.category === "men's clothing");
 

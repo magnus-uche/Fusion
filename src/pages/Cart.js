@@ -23,7 +23,7 @@ if(cartProduct.length >= 1){
         <h4>total</h4>
         <h6>${total}</h6>
         </div>
-        <button className='btn btn-primary'>check out</button>
+        <button className='btn btn-primary' >check out</button>
         </footer>
         </div>
         </section>

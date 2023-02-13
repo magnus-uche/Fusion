@@ -1,74 +1,8 @@
 import React from 'react';
 import { useState, useEffect, useContext, useReducer, useCallback } from 'react';
-import { Children } from 'react';
+import { reducer } from './reducer';
 const AppContext = React.createContext();
-
 const url = 'https://fakestoreapi.com/products';
-
-const reducer = (state, action) => {
-    if (action.type === 'UPDATE-PRODUCT') {
-        return { ...state, products: action.payload, amount: 0 };
-    }
-    if (action.type === 'INCREASE') {
-        let tempProduct = state.cartProduct.map((product) => {
-            if (product.id === action.payload) {
-                return { ...product, amount: product.amount + 1 }
-            }
-            return product;
-        })
-
-        return { ...state, cartProduct: tempProduct }
-    }
-    if (action.type === 'DECREASE') {
-        let tempProduct = state.cartProduct.map((product) => {
-            if (product.id === action.payload) {
-                if (product.amount <= 1) {
-
-                    return { ...product, amount: product.amount = 1 };
-                }
-                return { ...product, amount: product.amount - 1 }
-            }
-            return product;
-        });
-        return { ...state, cartProduct: tempProduct };
-    };
-    if (action.type === "ADD-TO-CART") {
-
-        let getProduct = state.products.find((product) => product.id === action.payload
-        )
-
-        console.log('getProduct', getProduct)
-        console.log({ cartProduct: state.cartProduct });
-        return { ...state, cartProduct: state.cartProduct ? Array.from(new Set([...state.cartProduct, getProduct])) : [getProduct] }
-    }
-
-    if(action.type ==='GET_TOTAL') {
-        let {total, amount} = state.cartProduct.reduce((cartTotal, cartItem)=>{
-          let price = cartItem.price;
-          let amount =  cartItem.amount;
-          const itemTotal = price * amount;
-
-          cartTotal.total += itemTotal
-          cartTotal.amount += amount
-          return cartTotal;
-        },{
-            amount : 0,
-            total: 0
-        });
-
-        total = parseInt(total).toFixed(2)
-
-        return {...state, total: total, amount: amount};
-    }
-
-    if(action.type === 'REMOVE'){
-        let newProduct = state.cartProduct.filter((product)=>{
-            return product.id !== action.payload
-        })
-
-        return {...state, cartProduct: newProduct}
-    };
-};
 
 const initialState = {
     cartProduct: [],
@@ -79,27 +13,29 @@ const initialState = {
     products: [],
 };
 const AppProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
-    const [amount, setAmount] = useState(0)
-    const [isLoading, setIsLoading] = useState(true)
-    const [searchField, setSearchField] = useState('')
+const [state, dispatch] = useReducer(reducer, initialState);
+const [isLoading, setIsLoading] = useState(true)
+const [searchField, setSearchField] = useState('')
+const [isCategoriesOpen, setIsCategoriesOpen ] = useState(false); 
+const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+const [isSubMenuOpen, SetIsSubMenuOpen] = useState(false);
+const [location, setLocation] = useState({})
 
-    const fetchData = useCallback(async () => {
-        const response = await fetch(url);
-        const product = await response.json();
-        const filterData = product.filter((items) => {
-            return items.title.toLowerCase().includes(searchField);
-        })
+const fetchData = useCallback(async () => {
+const response = await fetch(url);
+const product = await response.json();
+// console.log(product)
+const filterData = product.filter((items) => {
+        return items.title.toLowerCase().includes(searchField); })
         //dynamically add amount key-value pairs
         filterData.map((item) => {
-            const newItem = item["amount"] = 1;
-            return newItem;
-        })
-
+        const newItem = item["amount"] = 1;
+        return newItem;
+        });
 
         dispatch({ type: "UPDATE-PRODUCT", payload: filterData });
-        setIsLoading(false)
-    }, [searchField])
+        setIsLoading(false);
+    }, [searchField]);
 
     useEffect(() => {
         fetchData()
@@ -118,12 +54,34 @@ const AppProvider = ({ children }) => {
     };
 
     const remove = (id) => {
-        dispatch({ type: 'REMOVE', payload: id})
-    }
+        dispatch({ type: 'REMOVE', payload: id });
+    };
 
     const addCart = (id) => {
+        dispatch({ type: 'ADD-TO-CART', payload: id });
+    }
+ 
+    const openCategory = (coordinate) => {
+        setLocation(coordinate)
+        setIsCategoriesOpen(true)
+    }
 
-        dispatch({ type: 'ADD-TO-CART', payload: id })
+    const closeCategory = () => {
+        setIsCategoriesOpen(false)
+    }
+
+    const openSidebar = () => {
+        setIsSideBarOpen(true)
+    }
+    const closeSidebar = () => {
+        setIsSideBarOpen(false)
+    }
+    const openSubmenu = () => {
+        SetIsSubMenuOpen(true)
+    }
+    
+    const closeSubmenu  = () => {
+        SetIsSubMenuOpen(false)
     }
     // console.log('state.cartProduct', state.cartProduct)
     // const checkId = state.cartProduct.find(element => {
@@ -135,8 +93,7 @@ const AppProvider = ({ children }) => {
     // } else {
     //     dispatch({type: 'ADD-TO-CART', payload: id});
     // }
-
-    // console.log('state context', {...state})
+console.log(state)
 
     return (
         <AppContext.Provider value={{
@@ -146,7 +103,18 @@ const AppProvider = ({ children }) => {
             addCart,
             remove,
             setSearchField,
-            isLoading
+            isLoading,
+            isCategoriesOpen,
+            openCategory,
+            closeCategory,
+            isSideBarOpen, 
+            openSidebar,
+            closeSidebar,
+            isSubMenuOpen, 
+            openSubmenu,
+            closeSubmenu,
+            location
+         
         }}>
             {children}
         </AppContext.Provider>
@@ -155,6 +123,6 @@ const AppProvider = ({ children }) => {
 
 export const useGlobalContext = () => {
     return useContext(AppContext);
-}
+};
 
 export { AppProvider, AppContext };

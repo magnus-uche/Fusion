@@ -6,7 +6,6 @@ const Electronics = () => {
     const {products} = useGlobalContext();
     const electronics = products.filter((item)=> item.category === 'electronics');
     
-    
   return (
     <section className='section'>
     <div className="section-title">

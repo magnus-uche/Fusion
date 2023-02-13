@@ -3,7 +3,7 @@ import { useGlobalContext } from '../Context';
 import { FaMinus } from "react-icons/fa";
 import { FaPlus} from "react-icons/fa";
 
-// FaPlus
+
 
 const CartContainer = ({image, title, price, id, amount }) => {
 const {increase, decrease, remove} = useGlobalContext();

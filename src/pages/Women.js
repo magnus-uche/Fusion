@@ -3,7 +3,7 @@ import Product from '../components/Product';
 import { useGlobalContext } from '../Context';
 
 const Women = () => {
-    const {products} = useGlobalContext()
+    const {products} = useGlobalContext();
     const forWomen = products.filter((item)=> item.category === "women's clothing");
 
   return (
@@ -21,4 +21,4 @@ const Women = () => {
     )
 }
 
-export default Women
+export default Women;
