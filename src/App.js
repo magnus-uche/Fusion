@@ -15,7 +15,7 @@ import { useGlobalContext } from './Context';
 import SideBar from './components/SideBar';
 import Loading from './components/Loading';
 import Categories from './components/Categories';
-import User from './components/User';
+import User from './pages/User';
 
 
 function App() {
