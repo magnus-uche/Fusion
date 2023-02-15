@@ -8,10 +8,7 @@ const Women = () => {
 
   return (
     <section className='section'>
-    <div className="section-title">
-    <h1>women wear</h1>
-    </div>
-    <div className="products-center">
+    <div className="women">
     {forWomen.map((product)=>{
         const {id} = product
         return <Product key={id} {...product}/>

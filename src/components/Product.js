@@ -22,8 +22,8 @@ const Product = ({image, title, category, price, id, amount }) => {
     <div className="discount">-10%</div>
     </div>
     </div>
-    <button className="btn-cart" onClick={()=>addCart(id)}>Add to Cart</button>
     </Link>
+    <button className="btn-cart" onClick={()=>addCart(id)}>Add to Cart</button>
     </section>
     )
   }

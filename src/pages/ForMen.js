@@ -9,10 +9,7 @@ const forMen = products.filter((item)=> item.category === "men's clothing");
 
 return (
     <section className='section'>
-    <div className="section-title">
-    <h1>mens wears</h1>
-    </div>
-    <div className="products-center">
+    <div className="products-center addTop">
     {forMen.map((product)=>{
         const {id} = product
         return <Product key={id} {...product}/>

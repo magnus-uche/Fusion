@@ -23,18 +23,19 @@ const handleSubmit = (e) =>{
 }
 
 return (
-    <section className='search'>
+  
     <form className='search-form' onSubmit={handleSubmit}>
-    <label htmlFor='name' className='form-control'>Search Your Favorite Wear</label>
+    <label htmlFor='name' className='form-control'></label>
     <input 
     type="text"
     name='name'
     id='name'
+    placeholder='Search Your Favorite Wears'
     ref={inputField}
     onChange={onChange} 
     />
     </form>
-    </section>
+
 )
 };
 

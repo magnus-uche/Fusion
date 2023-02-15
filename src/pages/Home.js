@@ -6,9 +6,8 @@ import ProductItem from '../components/ProductItem';
 const Home = () => {
   return (
     <div>
-    <SearchForm/>
-    <ProductItem/>
 
+    <ProductItem/>
     </div>
   )
 };
