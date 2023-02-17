@@ -2,6 +2,7 @@ import React from 'react';
 import AddCart from './AddCart';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../Context';
+import './Product.css'
 
 const Product = ({image, title, category, price, id, amount }) => {
   const {addCart} = useGlobalContext();
@@ -10,7 +11,7 @@ const Product = ({image, title, category, price, id, amount }) => {
   
   return (
     <section className='product-material'>
-    <Link to={`/products/${id}`} >
+    <Link to={`/products/${id}`} className='link'>
     <div className="img-container">
     <img src={image} alt={title} style={{width: 120}}  className='product_image'/>
     </div>

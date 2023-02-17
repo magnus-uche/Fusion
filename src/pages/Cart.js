@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CartContainer from '../components/CartContainer';
+
 import { useGlobalContext } from '../Context';
+import './Cart.css'
 
 const Cart = () => {
 const {cartProduct, total} = useGlobalContext();

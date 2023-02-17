@@ -2,14 +2,14 @@ import React from 'react';
 import { useGlobalContext } from '../Context';
 import { FaMinus } from "react-icons/fa";
 import { FaPlus} from "react-icons/fa";
-
+import './CartContainer.css'
 
 
 const CartContainer = ({image, title, price, id, amount }) => {
 const {increase, decrease, remove} = useGlobalContext();
   return (
     <section className="cart_item">
-    <img src={image} className='cart-image' alt={title} style={{width :60}}/>
+    <img src={image} className='cart-image' alt={title} style={{width :100}}/>
     <div className="cart-desc">
     <h4>{title}</h4>
     <h3>${price}</h3>

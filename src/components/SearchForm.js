@@ -2,6 +2,8 @@ import React from 'react';
 import { useGlobalContext } from '../Context';
 import { useRef, useState } from 'react';
 import { useEffect } from 'react';
+import { FaSearch } from 'react-icons/fa';
+import './SearchForm.css'
 
 
 const SearchForm = () => {
@@ -25,15 +27,15 @@ const handleSubmit = (e) =>{
 return (
   
     <form className='search-form' onSubmit={handleSubmit}>
-    <label htmlFor='name' className='form-control'></label>
     <input 
     type="text"
     name='name'
     id='name'
-    placeholder='Search Your Favorite Wears'
+    placeholder='Search Your favourite products...'
     ref={inputField}
     onChange={onChange} 
     />
+    <button className='btn_search' type='button'><FaSearch/></button>
     </form>
 
 )

@@ -1,20 +1,42 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useMemo } from "react";
 import { useEffect } from "react";
-import { image } from "../data";
+import { image, caroImage } from "../data";
 import { useRef } from "react";
-import {FaChevronLeft} from 'react-icons/fa'
-import {FaChevronRight} from 'react-icons/fa'
+import { FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
+import './Carosel.css'
+
+const run = num => {
+  switch (num) {
+  case 0:
+    return [true,false,false,false]
+  break;
+  case 1:
+    return [false,true,false,false]
+  break;
+  case 2:
+   return [false,false,true,false]
+  break;
+  case 3:
+return [false,false,false,true]
+break;
+  default: console.log('not wprking')
+      break;
+  }
+}
 
 const Carosel = () => {
   let count = image.length - 1;
   const [img, setImage] = useState();
-  const [num, setNum] = useState(count);
+  const [num, setNum] = useState(image.length- 1);
+  const [indicators, setIndicators] = useState([true, false, false, false]);
   const timeId = useRef(null);
 
   useEffect(() => {
     timeId.current = setTimeout(() => {
-      minus();
+      const checkNum = num > 0 ? num - 1 : image.length - 1
+      setNum(checkNum)
     }, 5000);
     return () => clearTimeout(timeId.current);
   }, [num]);
@@ -23,41 +45,45 @@ const Carosel = () => {
     setImage(image);
   }, []);
 
+  useEffect(()=>{
+    setIndicators(run(num))
+  },[num])
+
   const minus = () => {
     clearTimeout(timeId.current);
-    let con = 0;
-    const imgLength = image.length - 1;
-    if (num > 0) {
-      con = num - 1;
-    }
-    if (num <= 0) {
-      con = imgLength;
-    }
-    setNum(con);
+    const minusNum = num > 0 ? num - 1 : image.length - 1 
+    setNum(minusNum)
   };
 
   const plus = () => {
-    let count = 0;
-    const imgLeng = image.length - 1;
-    if (num >= 0) {
-      count = num + 1;
-    }
-    if (num >= imgLeng) {
-      count = 0;
-    }
-    setNum(count);
+    const addNum = num >= image.length - 1 ?  0 : num  +  1 ;
+    setNum(addNum)
   };
 
+  const memoizedImage = useMemo(() => image, [])
+  const result = useMemo(() => indicators, [indicators])
+
   return (
-    <div className='carousel'>
-      <img src={image[num].url} alt="img" style={{ width: 1000, height: 320 }} />
+    <div className="carousel">
+      <img
+        src={memoizedImage[num].url}
+        alt="img"
+        style={{ width: 1000, height: 500 }}
+        className="hero_image"
+      />
+      <ul className="carousel_indicator">
+        <li style={{background: `${result[0] ? '#ed017f' : '#afafaf'}`}}></li>
+        <li style={{background: `${result[1] ? '#ed017f' : '#afafaf'}`}}></li>
+        <li style={{background: `${result[2] ? '#ed017f' : '#afafaf'}`}}></li>
+        <li style={{background: `${result[3] ? '#ed017f' : '#afafaf'}`}}></li>
+      </ul>
       <div className="carousel-control">
-      <button className="btn-carousel" onClick={minus}>
-      <FaChevronLeft className="btn-"/>
-      </button>
-      <button className="btn-carousel" onClick={plus}>
-      <FaChevronRight className="btn-right"/>
-      </button>
+        <button className="btn-carousel" onClick={minus}>
+          <FaChevronLeft className="btn-" />
+        </button>
+        <button className="btn-carousel" onClick={plus}>
+          <FaChevronRight className="btn-right" />
+        </button>
       </div>
     </div>
   );

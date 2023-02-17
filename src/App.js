@@ -27,12 +27,12 @@ function App() {
     </div>
    
   };
+  // <Categories/>
 
+  // <Nav/>
   return (
     <Router>
-    <Nav/>
     <SideBar/>
-    <Categories/>
       <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='men' element={<ForMen/>}/>

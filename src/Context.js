@@ -21,6 +21,7 @@ const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 const [isSubMenuOpen, SetIsSubMenuOpen] = useState(false);
 const [location, setLocation] = useState({})
 
+
 const fetchData = useCallback(async () => {
 const response = await fetch(url);
 const product = await response.json();
@@ -58,6 +59,7 @@ const filterData = product.filter((items) => {
     };
 
     const addCart = (id) => {
+        console.log('id', id)
         dispatch({ type: 'ADD-TO-CART', payload: id });
     }
  
@@ -83,17 +85,6 @@ const filterData = product.filter((items) => {
     const closeSubmenu  = () => {
         SetIsSubMenuOpen(false)
     }
-    // console.log('state.cartProduct', state.cartProduct)
-    // const checkId = state.cartProduct.find(element => {
-    //     return element.id === id
-    // })
-    // console.log(checkId);
-    // if(checkId){
-    //     increase(id)2
-    // } else {
-    //     dispatch({type: 'ADD-TO-CART', payload: id});
-    // }
-console.log(state)
 
     return (
         <AppContext.Provider value={{

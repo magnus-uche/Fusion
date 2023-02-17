@@ -5,6 +5,7 @@ import AddCart from "../components/AddCart";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context";
 import Loading from "../components/Loading";
+import './ProductInfo.css'
 
 const url = "https://fakestoreapi.com/products/1";
 
@@ -20,6 +21,7 @@ const ProductInfo = () => {
         try {
         const response = await fetch(`https://fakestoreapi.com/products/${id}`);
         const items = await response.json();
+        
         if (items) {
           const { id, title, price, description, category, image } = items;
           const newProduct = {
@@ -41,16 +43,10 @@ const ProductInfo = () => {
   }
     fetchdata();
   },[id]);
-  
-  // useEffect(()=>{
-  //   setTimeout(()=>{
-  //     setLoading(false)
-  //   }, 2000)
-  // }, [])
 
   if(loading){
     return (
-      <section className="loader"> 
+      <section  className="load"> 
       <Loading/>
       </section>
     )
@@ -68,24 +64,24 @@ const ProductInfo = () => {
       image
  } = product;
 
-  return <section className='section product-section'>
+  return <section className='product_info_section'>
 
         <Link to='/' className='btn btn-primary'>back Home</Link>
-        <h2 className="section-title">{title}</h2>
-        <div className="product-item">
+        <h2 className="section_title">{title}</h2>
+        <div className="product_item">
         <img src={image} alt={title}  />
-        <div className="product-item-info">
+        <div className="product_item-info">
         <p>
-        <span className="product-item-data">title:</span>{title}
+        <span className="product_item_data">title:</span> {title}
         </p>
         <p>
-        <span className="product-item-data">category:</span>{category}
+        <span className="product_item_data">category:</span> {category}
         </p>
         <p>
-        <span className="product-item-data">price:</span>${price}
+        <span className="product_item_data">price:</span> ${price}
         </p>
         <p>
-        <span className="product-item-data">description:</span>{description}
+        <span className="product_item_data">description:</span> {description}
         </p>
         <button className="btn btn-primary" onClick={()=>addCart(id)}>Add to Cart</button>
         </div>

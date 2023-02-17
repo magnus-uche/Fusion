@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <div className='loader'>
     <FadeLoader 
-    color="#476a2e" 
+    color="#ed017f" 
     height={12}
     margin={2}
     radius={2}

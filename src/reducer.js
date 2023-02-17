@@ -1,5 +1,4 @@
 export const reducer = (state, action) => {
-    console.log("payload",action.payload)
     if (action.type === 'UPDATE-PRODUCT') {
     return { ...state, products: action.payload, amount: 0 };
     }
@@ -11,6 +10,7 @@ export const reducer = (state, action) => {
             }
             return product;
         })
+
         return { ...state, cartProduct: tempProduct }
     }
 
@@ -28,6 +28,7 @@ export const reducer = (state, action) => {
     };
 
     if (action.type === "ADD-TO-CART") {
+        console.log('action.type', action.type)
         let getProduct = state.products.find((product) => product.id === action.payload)
         // console.log({ cartProduct: state.cartProduct });
         return { ...state, cartProduct: state.cartProduct ? Array.from(new Set([...state.cartProduct, getProduct])) : [getProduct] }

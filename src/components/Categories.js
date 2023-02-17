@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
+import {  useRef, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 
 import { useGlobalContext } from "../Context";
@@ -11,10 +11,8 @@ const Categories = () => {
   useEffect(() => {
     let submenu = container.current;
     const { botton, center } = location;
-    console.log("location :>> ", location);
     submenu.style.left = `${center}px`;
     submenu.style.right = `${botton}px`;
-    // console.log("vf",submenu)
   }, [location]);
 
   return (
