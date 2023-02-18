@@ -7,11 +7,15 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import './Sidebar.css'
 import SearchForm from "./SearchForm";
+import Login from "./Login";
 
 const SideBar = () => {
 const {amount, openCategory} = useGlobalContext();
 const [sidebar, setSidebar] = useState(false);
+const [loginbar, setLoginBar] = useState(false);
+
 const showSidebar = () => setSidebar(!sidebar);
+const showLogin = () => setLoginBar(!loginbar);
 
 return (
     <div>
@@ -23,7 +27,8 @@ return (
     <Link to='/' className="logo">Kundum</Link>
     <div className="nav-center" >
     <SearchForm/>
-    <div className="account" >log in</div>
+
+    <Link className="account" onClick={showLogin} to='#'>log in</Link>
 
     <div className="cart_section">
     <Link to='/cart' className="cart_link">
@@ -54,6 +59,7 @@ return (
     })}
     </ul>
     </nav>
+    <Login loginbar={loginbar} showLogin={showLogin}/>
     </div>
 )
 };

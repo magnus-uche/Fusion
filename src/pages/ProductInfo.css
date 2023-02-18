@@ -9,6 +9,7 @@
   width: 1em;
   height: 4em;
 }
+
 .loader {
   color: var(--primaryColor);
   text-indent: -9999em;
@@ -20,7 +21,6 @@
   -ms-transform: translateZ(0);
   transform: translateZ(0);
 }
-
 
 .product_info_section{
   padding: 6em 5rem 0;

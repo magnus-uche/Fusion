@@ -57,7 +57,7 @@
   .discount {
     position: absolute;
     top: -6em;
-    color: var(--primaryColor);
+    color: #df7eb2;
     background-color: #f3e6d2;
   }
 

@@ -4,7 +4,6 @@ import {BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import ProductInfo from './pages/ProductInfo';
-import Nav from './components/Nav';
 import Error from './pages/Error';
 import Cart from './pages/Cart';
 import ForMen from './pages/ForMen';
