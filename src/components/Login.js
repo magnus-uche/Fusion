@@ -5,6 +5,8 @@ import {FcGoogle} from 'react-icons/fc'
 import {FaFacebook} from 'react-icons/fa'
 import './Login.css';
 
+
+
 const Login = ({loginbar, showLogin}) => {
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
@@ -18,11 +20,10 @@ setEmail(input)
 
 const handleSumbit = (e) =>{
 e.preventDefault()
-
 }
 
   return (
-    <section className={loginbar ? 'login active' : 'login'}>
+    <section className={loginbar ? 'login ' : 'login active'}>
     <div className="login_header">
     <h2>Login</h2>
     <Link className='Login_btn' to='#'>
@@ -37,22 +38,21 @@ e.preventDefault()
     <input 
     type="text"
     name="email"
-     id="email" 
-     ref={inputField}
+    id="email" 
+    ref={inputField}
     autoComplete='username'
-     onChange={handleChange}/>
-
+    onChange={handleChange}/>
     </div>
+
     <div className="password">
     <label htmlFor="" className='Login_form_label'>Password</label>
     <input 
     type="password"
-     name='password' 
-      id='password' 
-      autoComplete='current-password'
-     ref={inputField}
-     onChange={handleChange}/>
-
+    name='password' 
+    id='password' 
+    autoComplete='current-password'
+    ref={inputField}
+    onChange={handleChange}/>
     </div>
 
     <button 

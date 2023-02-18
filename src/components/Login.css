@@ -8,7 +8,6 @@ top: 0;
 left:66%;
 right: -100%;
 transition: 850ms;
-
 }
 
 .active {
@@ -80,5 +79,4 @@ background-color: rgba(0, 128, 0, 0.637);
     border: 1px solid rgb(58, 58, 206);
     border-radius: 2px;
     cursor: pointer;
-    
 }
