@@ -1,5 +1,7 @@
 .search-form {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: var(--smallWidth);
   margin: 0 auto;
   max-width: 30em;
@@ -7,19 +9,24 @@
   border-radius: var(--mainBorderRadius);
 }
 
+.showform {
+  visibility: visible;
+}
+
 input {
-  padding: 1em;
+  margin-bottom: 0.5em;
+  padding: 0.7em  0  0.7em 0.5em;
   width: 100%;
+  max-width: 500px;
   border-radius: var(--mainBorderRadius);
   border: 1px solid var(--darkGrey);
 }
 
-@media (max-width: 900px) {
-  /* .media900 .search-form {
-    width: calc(100% - 4em);
-    max-width: 48em;
-  } */
+input:focus {
+  color: gray;
+}
 
+@media (max-width: 900px) {
   input {
     padding: 0.7em;
     border-top-right-radius: 0;
@@ -27,42 +34,54 @@ input {
   }
 }
 
-.form-control label {
-  display: block;
-  margin-bottom: 1.25rem;
-  font-weight: bold;
-  letter-spacing: 0.25rem;
-  color: var(--primaryColor);
-}
-
-.form-control input {
-  width: 100%;
-  border: none;
-  border-color: transparent;
-  background: var(--mainBackground);
-  border-radius: var(--mainBorderRadius);
-  padding: 0.5rem;
-  font-size: 1.2rem;
-}
-
 .btn_search {
-  color: var(--mainWhite);
-  border: 2px solid var(--primaryColor);
-  padding: 0.45rem 1rem;
-  display: inline-block;
+  border: none;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   transition: var(--mainTransition);
   cursor: pointer;
   font-size: 0.8rem;
   background: var(--primaryColor);
+  color: var(--mainWhite);
   border-radius: var(--mainBorderRadius);
   margin-left: 0.8em;
-  margin-right: 1em;
+  height: 35px;
+}
+
+.btn_search:hover {
+  background-color: #f8b470de;
 }
 
 @media (max-width: 900px) {
-  /* .btn_search {
+  .search-form {
+    width: 25em;
+  }  
+
+  .btn_search {
     margin-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-  } */
+    height: 35px;
+  }
 }
+
+@media (max-width: 780px) {
+  .search-form {
+    width: 90vw;
+    max-width: 80em;
+  }
+
+  input {
+    width: 100;
+    max-width: 900px;
+  }
+
+  .btn_search {
+    height: 36px;
+  }
+
+}
+

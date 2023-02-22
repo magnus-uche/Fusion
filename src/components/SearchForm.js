@@ -10,9 +10,11 @@ const SearchForm = () => {
 const [search, setSearch] = useState('');    
 const inputField = React.useRef('');
 const {setSearchField} = useGlobalContext();
+const reSize = window.innerWidth
 
 useEffect(()=>{
  inputField.current.focus();
+ 
 },[]);
 
 const onChange = () =>{
@@ -26,7 +28,7 @@ const handleSubmit = (e) =>{
 
 return (
   
-    <form className='search-form' onSubmit={handleSubmit}>
+    <form className={'search-form showform'}   onSubmit={handleSubmit}>
     <input 
     type="text"
     name='name'

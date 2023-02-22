@@ -21,12 +21,23 @@ margin: 0px auto;
   .empty {
     display: block;
     justify-content: center;
+    align-items: center;
     text-align: center;
     width: 100%;
+    border: 1px solid rgb(247, 247, 247);
+  }
+
+  .empty_container {
+    background-color: white;  
+    width: 25em;
+    margin: 8em auto 0 auto;
+    padding: 3em;
+    box-shadow: 1px 2px 3px 1px ;
+    border-radius: 2px;
   }
   
-  .empty h1 {
-    padding-top: 6em;
+  .empty h3 {
+    font-weight: 700;
   }
 
   .check_out {

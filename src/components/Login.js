@@ -10,12 +10,22 @@ import './Login.css';
 const Login = ({loginbar, showLogin}) => {
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
-const {inputField} = useRef(null)
+const [userInfo, setUserInfo] = useState({
+  email : '',
+  password : ''
+});
+const inputField = useRef(null)
 
-const handleChange = () => {
-    const input = inputField.current.value
-console.log('input :>> ', input);
-setEmail(input)
+const handleChange = (event) => {
+const input = inputField.current.value
+const target = event.target
+
+if(target.type === 'email') {
+  console.log('input :>> ', input);
+  setEmail(input)
+} else {
+  setEmail('')
+}
 }
 
 const handleSumbit = (e) =>{
@@ -23,7 +33,8 @@ e.preventDefault()
 }
 
   return (
-    <section className={loginbar ? 'login ' : 'login active'}>
+    <article className={loginbar ? 'login_container active' : 'login_container'}>
+    <section className='login'>
     <div className="login_header">
     <h2>Login</h2>
     <Link className='Login_btn' to='#'>
@@ -39,6 +50,7 @@ e.preventDefault()
     type="text"
     name="email"
     id="email" 
+
     ref={inputField}
     autoComplete='username'
     onChange={handleChange}/>
@@ -50,6 +62,7 @@ e.preventDefault()
     type="password"
     name='password' 
     id='password' 
+ 
     autoComplete='current-password'
     ref={inputField}
     onChange={handleChange}/>
@@ -57,15 +70,16 @@ e.preventDefault()
 
     <button 
     className="login_btn"
-     type='submit' 
-     value='Login'>Login</button>
-     <hr /> 
+    type='submit' 
+    value='Login' typeof='submit'>Login</button>
+    <hr /> 
     </form>
     <div className="login_google">
     <button className='facebook_btn social_btn' >Login with <span><FaFacebook/></span></button>
-    <button className='google_btn social_btn'>Login with <span><FcGoogle/></span></button>
+    <button className='google_btn social_btn' type='submit'>Login with <span><FcGoogle/></span></button>
     </div>
     </section>
+    </article>
   )
 };
 

@@ -29,7 +29,7 @@ break;
 const Carosel = () => {
   let count = image.length - 1;
   const [img, setImage] = useState();
-  const [num, setNum] = useState(image.length- 1);
+  const [num, setNum] = useState(image.length - 1);
   const [indicators, setIndicators] = useState([true, false, false, false]);
   const timeId = useRef(null);
 
@@ -46,22 +46,22 @@ const Carosel = () => {
   }, []);
 
   useEffect(()=>{
-    setIndicators(run(num))
-  },[num])
+    setIndicators(run(num));
+  },[num]);
 
   const minus = () => {
     clearTimeout(timeId.current);
     const minusNum = num > 0 ? num - 1 : image.length - 1 
-    setNum(minusNum)
+    setNum(minusNum);
   };
 
   const plus = () => {
     const addNum = num >= image.length - 1 ?  0 : num  +  1 ;
-    setNum(addNum)
+    setNum(addNum);
   };
 
-  const memoizedImage = useMemo(() => image, [])
-  const result = useMemo(() => indicators, [indicators])
+  const memoizedImage = useMemo(() => image, []);
+  const result = useMemo(() => indicators, [indicators]);
 
   return (
     <div className="carousel">
@@ -72,10 +72,12 @@ const Carosel = () => {
         className="hero_image"
       />
       <ul className="carousel_indicator">
-        <li style={{background: `${result[0] ? '#ed017f' : '#afafaf'}`}}></li>
-        <li style={{background: `${result[1] ? '#ed017f' : '#afafaf'}`}}></li>
-        <li style={{background: `${result[2] ? '#ed017f' : '#afafaf'}`}}></li>
-        <li style={{background: `${result[3] ? '#ed017f' : '#afafaf'}`}}></li>
+      {image.map((item, index)=> {
+
+        return  <li style={{background: `${result[item.id] ? '#ed017f' : '#afafaf'}`}}  key={index}></li>
+
+      })}
+  
       </ul>
       <div className="carousel-control">
         <button className="btn-carousel" onClick={minus}>
