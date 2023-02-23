@@ -107,7 +107,7 @@ const SideBar = () => {
             <Link to="#" className='order_track'>
             <MdOutlineSell className='track_icons'/>
             <div className='desc'>
-            <span className="order_track_title">Sell on Konga</span>
+            <span className="order_track_title">Sell on Kundum</span>
             <span className='order_track_paragraph'>join the merchants</span>
             </div>
             </Link>
