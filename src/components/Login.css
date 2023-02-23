@@ -106,7 +106,7 @@ background-color: rgba(0, 128, 0, 0.637);
 /* @media (max) */
 
 @media (max-width: 780px) {
-    .login_btn {
-        background-color: #ed017f;
-    }
+   .login_container {
+       display: none;
+   } 
 }

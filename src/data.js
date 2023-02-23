@@ -2,35 +2,35 @@ import react from "react";
 
 const sublink = [
 {
-    page: 'home',
-     url: '/',
+    page: 'Computer and Accessories',
+     url: '#',
      cName : 'nav-text'
-
 },
 {
-    page: 'Men',
-     url: '/men',
+    page: 'Phone and Tablets',
+     url: '#',
      cName : 'nav-text'
-
 },
 {
-    page: 'women',
-    url: '/come',
+    page: 'Electronics',
+    url: '#',
     cName : 'nav-text'
-
 },
 {
-    page: 'electronics',
-    url: '/electronics',
+    page: 'Konga Fashion',
+    url: '#',
     cName : 'nav-text'
-
 },
 {
-    page: 'jewelery',
-    url: '/jewelery',
+    page: 'Home and Kitchen',
+    url: '#',
     cName: 'nav-text'
 },
-
+{
+    page: 'Baby, Kids and Toys',
+    url: '#',
+    cName: 'nav-text'
+},
 ];
 
 export default sublink;
