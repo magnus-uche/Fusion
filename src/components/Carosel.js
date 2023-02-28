@@ -68,12 +68,11 @@ const Carosel = () => {
       <img
         src={memoizedImage[num].url}
         alt="img"
-        style={{ width: 1000, height: 500 }}
+        
         className="hero_image"
       />
       <ul className="carousel_indicator">
       {image.map((item, index)=> {
-
         return  <li style={{background: `${result[item.id] ? '#ed017f' : '#afafaf'}`}}  key={index}></li>
 
       })}

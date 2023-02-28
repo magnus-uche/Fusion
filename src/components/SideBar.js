@@ -67,7 +67,7 @@ const SideBar = () => {
           </Link>
         </div>
         <div>
-          <Link to="/#" className="nav_cat_list">
+          <Link to="/electronics" className="nav_cat_list">
             Electronics
           </Link>
         </div>

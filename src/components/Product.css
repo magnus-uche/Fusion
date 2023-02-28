@@ -3,7 +3,7 @@
     box-shadow: var(--lightShadow);
     display: flex;
     flex-direction: column;
-    width: 20em;
+    width: 100%;
     max-width: 11em;
     height: 18em;
     min-height: 14em;
@@ -12,6 +12,12 @@
     transition: all 0.2s ease-in-out;
   }
   
+@media (max-width: 463px ){
+  .product-material {
+   display: none;
+  }
+}
+
   .prodcuct-material:hover {
     box-shadow: var(--darkShadow);
     transform: scale(0.1);
@@ -84,3 +90,4 @@
     background: #f7a655;
     border: none;
   }
+

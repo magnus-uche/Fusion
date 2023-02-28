@@ -3,7 +3,6 @@
   z-index: 1;
   background-color: #a51c65;
   width: 100%;
-
   margin: auto;
 }
 
@@ -45,7 +44,6 @@
   display: flex;
   margin: auto;
   align-items: center;
-  border: 1px solid;
 }
 
 .nav-center {
@@ -183,12 +181,12 @@ padding: 1em 0 1em 0;
 }
 
 .order_track_title {
-  color: #4a4a4a;
+  color: #141414;
   font-size: .8125rem;
 }
 
 .order_track_paragraph {
-  color: #979797;
+  color: #0f0f0f;
   display: block;
   font-size: .625rem;
   margin-top: .125rem;
@@ -290,6 +288,19 @@ font-size: 1.2rem;
   .nav_categories {
     display: none;
   }
+}
+
+@media (min-width: 781px){
+.nav-menu {
+  left: -100%;
+  display: none;
+  background-color: #a51c65;
+}
+
+/* .active-nav {
+  left: ;
+  transition: 350ms;
+} */
 }
 
 @media (max-width: 780px) {

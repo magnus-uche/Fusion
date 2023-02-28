@@ -36,18 +36,31 @@ Global Styles
   box-sizing: border-box;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+body html{
+  font-family: Helvetica Neue,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,sans-serif;
+  height: 100%;
   color: var(--mainBlack);
+  -webkit-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
   background: var(--mainBackground);
   line-height: 1.4;
   font-size: 1rem;
   font-weight: 300;
+  width: 100%;
 }
-h1,
-h2,
-h3,
+
+body {
+  background-color: #f5f5f5;
+  color: #1c1d1f;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+  
+  h1,
+  h2,
+  h3,
 h4,
 h5,
 h6 {
@@ -74,11 +87,6 @@ img {
   display: block;
 }
 
-/* 
-====== 
-Buttons 
-======
-*/
 .btn,
 .btn-white,
 .btn-primary {
@@ -167,12 +175,6 @@ Buttons
   cursor: pointer;
 }
 
-/* 
-==========
-categories
-==========
-*/
-
 .categories {
   background: var(--offWhite);
   box-shadow: var(--darkShadow);
@@ -215,12 +217,6 @@ categories
   grid-template-columns: repeat(1, 1fr);
 }
 
-/* 
-====== 
-About
-======
-*/
-
 .about-section {
   width: var(--smallWidth);
   max-width: var(--maxWidth);
@@ -243,19 +239,6 @@ About
 .empty h1 {
   padding-top: 6em;
 }
-
-/*  user */
-
-/* .sign_container {
-  margin-left: 3em;
-  padding: 0.5em;
-}
-
-.user_container {
-  margin: 1em auto;
-  max-width: 30em;
-} */
-
 
 .cart-Container .cart_item {
   margin-top: 7em 0;
@@ -321,12 +304,6 @@ footer .check_out {
   border: none;
 }
 
-/* 
-====== 
-Error
-======
-*/
-
 .error-page {
   display: flex;
   justify-content: center;
@@ -336,14 +313,6 @@ Error
   text-align: center;
   text-transform: capitalize;
 }
-
-/* 
-====== 
-prouct Item
-======
-*/
-
-
 
 .women {
   margin: 4em 0 auto;
@@ -356,23 +325,10 @@ prouct Item
   gap: 1em;
 }
 
-.addTop {
-  margin-top: 4.5em;
+#addTop {
+   padding-top: 8em;
+
 }
-
-/* 
-====== 
-product material
-======
-*/
-
-
-/* 
-====== 
-Form
-======
-*/
-
 
 .cat_tab {
   background-color: var(--primaryColor);
@@ -385,17 +341,6 @@ Form
   background-color: var(--primaryLightColor);
 }
 
-/* 
-=========
-carousel
-=========
-*/
-
-/* 
-====== 
-product info
-======on
-*/
 
 .loader,
 .loader:before,

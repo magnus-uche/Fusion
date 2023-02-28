@@ -8,7 +8,7 @@ const Electronics = () => {
     
   return (
     <section className='section'>
-    <div className="products-center addTop">
+    <div className="products-center" id='addTop'>
     {electronics.map((product)=>{
         const {id} = product
         return <Product key={id} {...product}/>
