@@ -49,3 +49,195 @@ export const caroImage =[
      'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1675952097/contentservice/Week.jpg_H1DyeYz6o.jpg'
     
 ]
+
+export const heroCategories = [
+    {
+        linkTittle: 'Kundum Blog',
+        link: '#',
+    },
+    {
+        linkTittle: 'Pay Bills',
+        link: '#',
+    },
+    {
+        linkTittle: 'Free Delivery',
+        link: '#',
+    },
+    {
+        linkTittle: 'Offline Store',
+        link: '#',
+    },
+    {
+        linkTittle: 'Brand Stores',
+        link: '#',
+    },
+    {
+        linkTittle: 'Book Flights',
+        link: '#',
+    },
+]
+
+export const todaysdeal = [
+    {
+        id: 1,
+        discount: `${20}%`,
+        price : 7500,
+        discountPrice : 15000,
+        savePrice : 15000,
+        source1: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 576px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+        source2: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 600px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+       
+        img : {
+            dataexpand: '100',
+            datasrc : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            alt : 'Airtel 4G Pocket Wifi.',
+            src : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg'
+        },
+        productTitle : 'Airtel 4G Pocket Wifi',
+        
+        
+    },
+    {
+        id: 2,
+        discount: `${30}%`,
+        price : 7500,
+        discountPrice : 15000,
+        savePrice : 15000,
+        source1: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 576px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+        source2: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 600px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+       
+        img : {
+            dataExpand: '100',
+            datasrc : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            alt : 'Airtel 4G Pocket Wifi.',
+            src : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg'
+        },
+        productTitle : 'Airtel 4G Pocket Wifi',
+        
+        
+    },
+    {
+        id: 3,
+        discount: `${10}%`,
+        price : 7500,
+        discountPrice : 15000,
+        savePrice : 15000,
+        source1: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 576px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+        source2: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 600px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+       
+        img : {
+            dataExpand: '100',
+            datasrc : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            alt : 'Airtel 4G Pocket Wifi.',
+            src : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg'
+        },
+        productTitle : 'Airtel 4G Pocket Wifi',
+        
+        
+    },
+    {
+        id: 4,
+        discount: `${50}%`,
+        price : 7500,
+        discountPrice : 15000,
+        savePrice : 15000,
+        source1: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 576px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+        source2: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 600px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+       
+        img : {
+            dataExpand: '100',
+            datasrc : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            alt : 'Airtel 4G Pocket Wifi.',
+            src : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg'
+        },
+        productTitle : 'Airtel 4G Pocket Wifi',
+        
+        
+    },
+    {
+        id: 5,
+        discount: `${40}%`,
+        price : 7500,
+        discountPrice : 15000,
+        savePrice : 15000,
+        source1: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 576px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+        source2: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 600px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+       
+        img : {
+            dataExpand: '100',
+            datasrc : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            alt : 'Airtel 4G Pocket Wifi.',
+            src : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg'
+        },
+        productTitle : 'Airtel 4G Pocket Wifi',
+        
+        
+    },
+    {
+        id: 6,
+        discount: `${40}%`,
+        price : 7500,
+        discountPrice : 15000,
+        savePrice : 15000,
+        source1: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 576px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+        source2: {
+            dataSrcSet: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            media: '(max-width: 600px)',
+            srcset: 'https://www-konga-com-res.cloudinary.com/image/upload/w_200,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+        },
+       
+        img : {
+            dataExpand: '100',
+            datasrc : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg',
+            alt : 'Airtel 4G Pocket Wifi.',
+            src : 'https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Z/J/203255_1655290232.jpg'
+        },
+        productTitle : 'Airtel 4G Pocket Wifi',
+        
+        
+    },
+]
