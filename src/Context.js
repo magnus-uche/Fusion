@@ -1,8 +1,11 @@
 import React from 'react';
 import { useState, useEffect, useContext, useReducer, useCallback } from 'react';
 import { reducer } from './reducer';
+import { todaysdeal } from './data';
 const AppContext = React.createContext();
 const url = 'https://fakestoreapi.com/products';
+
+console.log('todaysdeal :>> ', todaysdeal, url);
 
 const initialState = {
     cartProduct: [],
@@ -25,16 +28,24 @@ const [location, setLocation] = useState({})
 const fetchData = useCallback(async () => {
 const response = await fetch(url);
 const product = await response.json();
-// console.log(product)
+// console.log("product",product)
+
 const filterData = product.filter((items) => {
         return items.title.toLowerCase().includes(searchField); })
         //dynamically add amount key-value pairs
-        filterData.map((item) => {
-        const newItem = item["amount"] = 1;
+const data =   filterData.map((item) => {
+        const newItem = {...item, ["amount"]: 1, ["source2"]: 'input image', ["source1"]: 'input image', ["intialPrice"]: item.price }
         return newItem;
         });
+const deals = todaysdeal.map((item)=>{
+    return {...item, ['amount']: 1};
+})
 
-        dispatch({ type: "UPDATE-PRODUCT", payload: filterData });
+// merge the url data and base data
+const newData = [...data, ...deals]
+// console.log('newdata :>> ', newData); 
+
+        dispatch({ type: "UPDATE-PRODUCT", payload: newData });
         setIsLoading(false);
     }, [searchField]);
 

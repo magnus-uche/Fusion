@@ -6,7 +6,7 @@ import './Product.css'
 
 const Product = ({image, title, category, price, id, amount }) => {
   const {addCart} = useGlobalContext();
-
+// console.log('id', id)
   const t_Slice = title.slice(0, 30)
   
   return (

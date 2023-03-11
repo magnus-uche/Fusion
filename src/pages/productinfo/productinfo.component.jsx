@@ -1,22 +1,34 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import AddCart from "../components/AddCart";
-import { Link } from "react-router-dom";
-import { useGlobalContext } from "../Context";
-import Loading from "../components/Loading";
-import './ProductInfo.css'
+// import AddCart from "../components/AddCart";
+import AddCart from "../../components/AddCart";
+import { useGlobalContext } from "../../Context";
+// import Loading from "../components/Loading";
+import Loading from "../../components/Loading";
+import './productinfo.styles.css'
 
 const url = "https://fakestoreapi.com/products/1";
 
 const ProductInfo = () => {
   const { id } = useParams();
-  const {isLoading,addCart} = useGlobalContext();
+  const {isLoading,addCart, products} = useGlobalContext();
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
     setLoading(true);
+    let useParamsId = Number(id);
+    if(useParamsId > 21){
+      const newProduct = products.find((item)=>{
+            return item.id === useParamsId;
+          });
+          setProduct(newProduct) 
+          setLoading(false);
+        };
+
+     if(useParamsId < 21){
     async function fetchdata(){
         try {
         const response = await fetch(`https://fakestoreapi.com/products/${id}`);
@@ -42,6 +54,7 @@ const ProductInfo = () => {
       setLoading(false);
   }
     fetchdata();
+  }
   },[id]);
 
   if(loading){

@@ -57,13 +57,18 @@ const SideBar = () => {
     
 <div className="nav_categories">
         <div>
-        <Link to="/#" className="nav_cat_list">
-            Computer and Accessories
-</Link>
+        <Link to="/Phones" className="nav_cat_list">
+        Phones and Tablets
+        </Link>
         </div>
         <div>
-          <Link to="/#" className="nav_cat_list">
-            phones and Tablets
+          <Link to="/adults" className="nav_cat_list">
+             Mens/Womens
+          </Link>
+        </div>
+        <div>
+          <Link to="/Computer" className="nav_cat_list">
+          Computer and Acceries
           </Link>
         </div>
         <div>
@@ -72,13 +77,8 @@ const SideBar = () => {
           </Link>
         </div>
         <div>
-          <Link to="/#" className="nav_cat_list">
-            Home and Kitchen
-          </Link>
-        </div>
-        <div>
-          <Link to="/#" className="nav_cat_list">
-            Baby, Kids and Toys
+          <Link to="/Kids" className="nav_cat_list">
+          Baby,Kids and Toys
           </Link>
         </div>
       </div>

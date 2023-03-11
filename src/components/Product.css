@@ -63,8 +63,9 @@
   .discount {
     position: absolute;
     top: -6em;
-    color: #df7eb2;
-    background-color: #f3e6d2;
+    color: white;
+    background-color: #119e47c7;
+    font-size: 1rem;
   }
 
 
@@ -74,20 +75,21 @@
     text-align: center;
     text-transform: uppercase;
     letter-spacing: var(--mainSpacing);
-    border: 2px solid var(--primaryColor);
+    border: 1px solid #ed017f ;
     border-radius: var(--mainBorderRadius);
-    color: var(--mainWhite);
-    background: var(--primaryColor);
-    height: 40px;
+    color: #ed017f;
+    height: 36px;
     display: inline-block;
     transition: var(--mainTransition);
     font-size: 0.6rem;
-    font-weight: 600;
+    font-weight: 700;
+    background-color: white;
     cursor: pointer;
   }
   
   .btn-cart:hover {
-    background: #f7a655;
+    background:#ed017f ;
     border: none;
+    color: white;
   }
 

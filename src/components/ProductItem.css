@@ -1,104 +1,25 @@
 .product_item_container {
-  padding: 6em 3rem;
+  padding: 6em 1.5rem;
   z-index: 0;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
-.today_deal {
-  margin: 0.9375rem auto;
+@media (max-width: 800px) {
+  .product_item_container {
+    padding: 6em 1rem;
+  }
 }
 
-.todays_deal {
+/* .divider {
   display: flex;
   align-content: center;
   height: 3.125rem;
   margin-top: 1.25rem;
   padding: 0 0.9375rem;
-  border-radius: 0.3125rem 0.3125rem 0 0;
-  background: #94004f
+  border-radius: 0.3125rem;
+  background: #f0f3f1d5
     url(https://res.cloudinary.com/staging-konga-com/image/upload/f_auto,q_auto/v1654791685/assets/images/homepage/Bg-Icons.png);
   color: white;
-}
-
-.todays_deal h2 {
-  color: #fff;
-  font-size: 1.25rem;
-  letter-spacing: 0.03125rem;
-  margin-bottom: 0;
-  margin-top: 0;
-  max-width: 70%;
-}
-
-.todays_deal-tittle {
-  display: block;
-  /* font-size: 1.5em; */
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
-
-.todays_deal h2 span {
-  font-size: 2rem !important;
-}
-
-.see_all_link {
-  display: flex;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.03125rem;
-  margin-left: 2.875rem;
-  align-items: center;
-  cursor: pointer;
-  color: white;
-}
-
-.deal_item_container {
-  background-color: #fff;
-  border-radius: 0 0 0.312 5rem 0.3125rem;
-}
-
-@media (min-width: 768px){
-  .deal_item_container {
-    padding: 0 0 .3125rem;
-  }
-}
-
-.deal_list {
-  /* display: flex;  */
-  list-style: none;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-}
-
-.deal_items {
-  overflow-x: auto;
-  font-weight: 400;
-  padding-bottom: 0.625rem;
-  background-color: #fff;
-}
-
-@media (max-width: 992px) {
-.deal_list {
-display: flex;
-}
-  
-}
-
-.deal_items:after,
-.deal_items:before {
-  content: " ";
-  display: table;
-}
-
-/* .deal_item_container ul {
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
 } */
 
 .products-center {
@@ -110,6 +31,7 @@ display: flex;
   flex-direction: center;
   justify-content: center;
   align-items: center;
+  border: 1px solid red;
 }
 
 .product-material-footer {
@@ -118,11 +40,5 @@ display: flex;
   width: 100%;
 }
 
-/* .addcart_section {
-  margin-bottom: 0.8em;
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgb(0, 255, 76);
-} */
+/* sponsored product section */
 
-/* prodcuct ends */
