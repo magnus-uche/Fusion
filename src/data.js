@@ -1,4 +1,6 @@
 import react from "react";
+import {FaPhone, FaEnvelope, FaWhatsapp} from "react-icons/fa";
+
 
 const sublink = [
     {
@@ -79,22 +81,22 @@ export const heroCategories = [
 
 export const footerSocial = [
     {
-        title: '',
+        title: 'EMAIL SUPPORT',
         redirect: '#',
-        label: '',
-        logo: ""
+        label: ['help@kundum.com'],
+        logo: <FaEnvelope className="logo"/>
     },
     {
-        title: '',
+        title: 'PHONE SUPPORT',
         redirect: '#',
-        label: '',
-        logo: ''
+        label: ['07034205338', '07034205338'],
+        logo: <FaPhone className="logo"/>
     },
     {
-        title: '',
+        title: 'WHATSAPP',
         redirect: '#',
-        label: '',
-        logo: ''
+        label: ['07034205338', '07034205338'],
+        logo: <FaWhatsapp className="logo"/>
     }
 ];
 
@@ -606,28 +608,6 @@ export const todaysdeal = [
         description: 'best product'
     },
 ]
-
-// const kids = todaysdeal.find((id)=> id.id === 21);
-// const phone = todaysdeal.find((id)=> id.id === 27);
-// const item = todaysdeal.find((id)=> id.id === 34);
-// const computer = todaysdeal.find((id)=> id.id === 29);
-// const generator = todaysdeal.find((id)=> id.id === 36);
-// const keyboard = todaysdeal.find((id)=> id.id === 36);
-// export const newdata = [kids,phone,item,computer,generator, keyboard];
-
-// console.log('newdata :>> ', newdata);
-
-const getDataById = (arr, id) =>{
-const item = [];
-for (let index = 0; index < arr.length; index++) {
-    if(id.includes(arr[index].id)){
-        item.push(arr[index]);
-    }
-}
-console.log('item :>> ', item);
-};
-
-  getDataById(todaysdeal, [27,34,29,36]);
 
 
 

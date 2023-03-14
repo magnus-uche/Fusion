@@ -1,7 +1,6 @@
 .product_item_container {
   padding: 6em 1.5rem;
   z-index: 0;
-  border: 1px solid red;
 }
 
 @media (max-width: 800px) {
