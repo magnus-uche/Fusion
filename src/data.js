@@ -77,6 +77,61 @@ export const heroCategories = [
     },
 ]
 
+export const footerSocial = [
+    {
+        title: '',
+        redirect: '#',
+        label: '',
+        logo: ""
+    },
+    {
+        title: '',
+        redirect: '#',
+        label: '',
+        logo: ''
+    },
+    {
+        title: '',
+        redirect: '#',
+        label: '',
+        logo: ''
+    }
+];
+
+export const other = [
+    {
+        title : 'ABOUT KUNDUM',
+        list: [
+            'Contact Us',
+            'About Us',
+            'Careers',
+            'Our Blog',
+            'Forum',
+            'Terms & Conditions'
+        ],
+        links: ['#','#','#','#','#','#']
+    },
+    {
+        title : 'BUYING ON KUNDUM',
+        list: [
+            'Buyer Safety Centre',
+            'FAQs',
+            'Delivery',
+            'Konga Return Policy'
+        ],
+        links: ['#','#','#','#',]
+    },
+    {
+        title : 'MAKE MONEY WITH KUNDUM',
+        list: [
+            'Sell on kundum',
+            'Become a Sales Consultant',
+            'Become a Logistics Service Partner',
+        ],
+        links: ['#','#','#']
+    },
+]
+
 
 export const todaysdeal = [
     {

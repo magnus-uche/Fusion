@@ -40,5 +40,9 @@
   width: 100%;
 }
 
+ h4 {
+   letter-spacing: 1;
+  padding-top: 1em;
+}
 /* sponsored product section */
 
