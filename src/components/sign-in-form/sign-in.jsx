@@ -6,6 +6,7 @@ import FormInput from '../form/form';
 import { signInAuthUserWithEmailAndPassword, signInWithGooglePopup } from '../../utils/firebase/firebase.util';
 
 
+
 const userDefault = {
   email: '',
   password: ''
@@ -28,9 +29,9 @@ const handleSumbit = async (event) =>{
 event.preventDefault();
 try {
   const response = await signInAuthUserWithEmailAndPassword(email, password);
-  console.log('response', response)
+
 } catch (error) {
-  console.log('error.code', error.code)
+  console.log('error.code', error.message)
 }
 setUserInfo(userDefault);
 }

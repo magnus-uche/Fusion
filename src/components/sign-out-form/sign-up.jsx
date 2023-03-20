@@ -8,36 +8,39 @@ const defaultFormInput = {
     displayName: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    is: false
+    confirmPassword: ''
+  
 }
 
 const SignUp = () => {
 const [userInfo, setUserInfo] = useState(defaultFormInput);
 const [checkInput, setCheckInput] = useState(false)
-const { displayName, email, password, confirmPassword, is} = userInfo;
+const { displayName, email, password, confirmPassword} = userInfo;
 
 // const inputField = useRef(null);
-
 const handleChange = (event) => {
 const { name, value } = event.target;
 setUserInfo({...userInfo, [name]: value});
 };
 
+
+const resetForm = () =>{
+    setUserInfo(defaultFormInput);
+}
+
 const handleSumbit = async (e) =>{
 e.preventDefault();
-if(!email || !password || !displayName) return;
-console.log('went through');
-if(password !== confirmPassword) {setTimeout(()=>{
-    setCheckInput(true);
-}, 2000)}
+if(password !== confirmPassword) { setTimeout(()=>{
+    setCheckInput(true)
+},[])}
+
 try{
-const res = await createAuthUserWithEmailAndPassword(email, password)
-console.log('res :>> ', res);
+const {user} = await createAuthUserWithEmailAndPassword(email, password)
+await createUserDocumentFromAuth(user, { displayName });
+resetForm();
 } catch (error) {
     console.log('error.code', error.code)
 }
-
   }
 
   return (
