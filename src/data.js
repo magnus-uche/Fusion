@@ -19,7 +19,7 @@ const sublink = [
         cName: 'nav-text'
     },
     {
-        page: 'Konga Fashion',
+        page: 'Kundum Fashion',
         url: '#',
         cName: 'nav-text'
     },
@@ -119,7 +119,7 @@ export const other = [
             'Buyer Safety Centre',
             'FAQs',
             'Delivery',
-            'Konga Return Policy'
+            'Kundum Return Policy'
         ],
         links: ['#','#','#','#',]
     },

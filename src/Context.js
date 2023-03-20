@@ -15,15 +15,21 @@ const initialState = {
     amount: 0,
     products: [],
 };
+
+// const userDefault = {
+//     currentUser: null,
+//     setCurrentUser: () => null
+// }
+
 const AppProvider = ({ children }) => {
+const [currentUser, setCurrentUser ] = useState(null)
 const [state, dispatch] = useReducer(reducer, initialState);
-const [isLoading, setIsLoading] = useState(true)
+const [isLoading, setIsLoading] = useState(false)
 const [searchField, setSearchField] = useState('')
 const [isCategoriesOpen, setIsCategoriesOpen ] = useState(false); 
 const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 const [isSubMenuOpen, SetIsSubMenuOpen] = useState(false);
-const [location, setLocation] = useState({})
-
+const [location, setLocation] = useState({}); 
 
 const fetchData = useCallback(async () => {
 const response = await fetch(url);
@@ -48,7 +54,7 @@ const newData = [...data, ...deals]
         dispatch({ type: "UPDATE-PRODUCT", payload: newData });
         setIsLoading(false);
     }, [searchField]);
-
+    
     useEffect(() => {
         fetchData()
     }, [searchField]);
@@ -97,6 +103,7 @@ const newData = [...data, ...deals]
         SetIsSubMenuOpen(false)
     }
 
+
     return (
         <AppContext.Provider value={{
             ...state,
@@ -115,8 +122,10 @@ const newData = [...data, ...deals]
             isSubMenuOpen, 
             openSubmenu,
             closeSubmenu,
-            location
-         
+            location,
+            currentUser,
+            setCurrentUser
+            
         }}>
             {children}
         </AppContext.Provider>

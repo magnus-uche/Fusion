@@ -1,0 +1,79 @@
+.form-container {
+    margin: 4em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form_section {
+    margin: 1em 0;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 30em;
+}
+
+/* .email {
+    margin-bottom: 1em;
+} */
+
+.login_form_label {
+    font-size: 0.8rem;
+}
+
+input {
+    margin-top: 0.5em;
+    -webkit-transition: 0.5s;
+}
+
+input[type='text' ],
+input[type='email' ],
+input[type='password' ],
+input[type='confirmPassword' ]:focus {
+background-color: #f7f7f7;
+border: 1px thin gray;
+color: var(--mainBlack);
+}
+
+/* .password {
+    margin-bottom: 1.5em;
+} */
+
+.login_btn {
+    width: 100%;    
+    color: white;
+    background-color: rgba(0, 128, 0, 0.712);
+    font-weight: 600;
+    border: none;
+    border-radius: 3px;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.login_btn:hover {
+background-color: rgba(0, 128, 0, 0.637);
+}
+
+.log-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.8em;
+}
+
+.social_btn {
+    padding: 1em;
+    width: 100%;
+    background-color: white;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.google{
+    margin-left: 0.8em;
+}
+
+/* @media (max) */
+@media (max-width: 780px) {
+   .login_container {
+       display: none;
+   } 
+}

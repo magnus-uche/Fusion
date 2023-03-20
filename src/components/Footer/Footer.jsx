@@ -13,7 +13,7 @@ const Footer = () => {
   const handleChange = () => {};
 
   return (
-    <footer >
+    <footer>
       <div className="footer-head">
         {footerSocial.map((item, index) => {
           return <Social {...item} key={index} />
@@ -44,7 +44,6 @@ const Footer = () => {
   );
 };
 
-
 const Social = ({ title, redirect, label, logo }) => {
 
   return (
@@ -66,9 +65,7 @@ const Social = ({ title, redirect, label, logo }) => {
     );
   }; 
   
-  
-  
-  const Others = ({ list, title, links }) => {
+const Others = ({ list, title, links }) => {
     return (
       <Fragment >
       <div className='others'>

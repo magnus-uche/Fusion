@@ -15,7 +15,7 @@ import { MdHome,MdOutlineSell,MdPending,MdRoom } from "react-icons/md";
 
 
 const SideBar = () => {
-  const { amount, openCategory } = useGlobalContext();
+  const { amount, openCategory, currentUser } = useGlobalContext();
   const [sidebar, setSidebar] = useState(false);
   const [loginbar, setLoginBar] = useState(false);
 
@@ -38,9 +38,10 @@ const SideBar = () => {
         <div className="nav_form">
           <SearchForm />
         </div>
-        <Link className="account" onClick={showLogin} to="#">
-          log in
-        </Link>
+        { currentUser ? (<span className="account" >sign out</span>) : ( <Link className="account" onClick={showLogin} to="#">
+        Login in
+      </Link>) }
+       
         <div className="cart_section media">
           <div>
             <Link to="/cart" className="cart_link">
@@ -88,15 +89,15 @@ const SideBar = () => {
 <nav className={sidebar ? "nav-menu active-nav" : "nav-menu"}>
         <div className="login-signup">
         <button className="nav_menu_btn">
-        <Link to="/login" className="login_link">Login</Link>
+        <Link to="/Login" className="login_link">Login</Link>
         </button>
         <button className="nav_menu_btn">
-        <Link to="/sign_Up" className="login_link">Signup</Link>
-        </button>
+        <Link to="#" className="login_link">Sign out</Link></button>
         </div>
 
         <section className="tracking">
-            <Link to="#" className="order_track">
+            <Link to="#" cla
+            ssName="order_track">
             <MdRoom className='track_icons'/>
             <div className="desc">
             <span className="order_track_title">Track Orders</span>
@@ -150,7 +151,7 @@ const SideBar = () => {
 
       {/* right sidebar at big screen */}
       <div>
-        <Login loginbar={loginbar} showLogin={showLogin} className="login" />
+        <Login loginbar={loginbar} showLogin={showLogin} className="login " />
       </div>
     </section>
   );
