@@ -15,24 +15,29 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-head">
+        
+        <div className="social-container">
         {footerSocial.map((item, index) => {
           return <Social {...item} key={index} />
         })}
-        <div className="best-deal">
-          <h4>GET LATEST DEALS</h4>
-          <p>Our best promotions sent to your inbox.</p>
         </div>
-        <form action="" onSubmit={handleSubmit} className="form-section">
+        <div className="best-deal">
+           <div className="best-deal-desc">
+           <h4>GET LATEST DEALS</h4>
+           <p>Our best promotions sent to your inbox.</p>
+           </div>
+           <form action="" onSubmit={handleSubmit} className="form-section">
           <input
-            type="email"
-            name="email"
-            value={email}
-            className='subscribe'
-            onChange={handleChange}
+          type="email"
+          name="email"
+          value={email}
+          className='subscribe'
+          onChange={handleChange}
           />
           <button type="submit" className="btn-submit">Subscribe</button>
-      
-        </form>
+          
+          </form>
+          </div>
       </div>
       <section className="footer-other">
         {other.map((item, index) => {
@@ -52,8 +57,8 @@ const Social = ({ title, redirect, label, logo }) => {
     {logo}
     </div>
     <div className="social-connect">
-    <p>{title}</p>
     <div className="nav-social">
+    <p>{title}</p>
     {label.map((item,index)=>{
       return(
         <li key={index} ><Link to={redirect} className="link-connect">{item}</Link></li>
@@ -72,8 +77,7 @@ const Others = ({ list, title, links }) => {
       <h5>{title}</h5>
       {list.map((item, index)=>{
         return (
-          
-         <li><Link to={links} className="link">{item}</Link></li>
+         <li key={index}><Link to={links} className="link">{item}</Link></li>
         )
       })}
       </div>

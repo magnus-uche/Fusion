@@ -80,23 +80,24 @@ export const heroCategories = [
 ]
 
 export const footerSocial = [
-    {
-        title: 'EMAIL SUPPORT',
-        redirect: '#',
-        label: ['help@kundum.com'],
-        logo: <FaEnvelope className="logo"/>
-    },
+    
     {
         title: 'PHONE SUPPORT',
         redirect: '#',
-        label: ['07034205338', '07034205338'],
-        logo: <FaPhone className="logo"/>
+        label: ['07034205338'],
+        logo: <FaPhone />
     },
     {
         title: 'WHATSAPP',
         redirect: '#',
-        label: ['07034205338', '07034205338'],
-        logo: <FaWhatsapp className="logo"/>
+        label: ['07034205338'],
+        logo: <FaWhatsapp />
+    },
+    {
+        title: 'EMAIL SUPPORT',
+        redirect: '#',
+        label: ['help@kundum.com'],
+        logo: <FaEnvelope  />
     }
 ];
 
