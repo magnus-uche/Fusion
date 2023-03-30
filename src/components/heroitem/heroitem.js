@@ -1,28 +1,32 @@
 import react from "react";
 import { Link } from "react-router-dom";
-// import './heroitem.styles.css'
-// import './heroitem/heroitem.css';
-import './hero.css'
+import { Fragment } from "react";
+import { caroImage } from "../../data";
+import './heroitem.css'
 
-const HeroItems = () =>{
+const HeroItems = () => {
+  return (
+    <div className="hero-container">
+      {caroImage.map((item) => {
+        const { image, title, category } = item
+        return (
+          <Fragment key={item.id}>
+          <div>
+          <Link to='#'>
+          <img src={image} alt={category} />
+            </Link>
+            <div className="items-description">
+            <p>Get up To 10% Off</p>
+            <Link to='#'>
+            SHOP NOW
+            </Link>
+            </div>
+            </div>
+          </Fragment>
+        )
+      })}
+    </div>
+  )
+};
 
-  
-    return (
-      <div>
-      <Link to='#'>
-      <div className="container">
-    <img src="https://www.istockphoto.com/photo/three-mannequins-dressed-in-kids-wear-gm1310788780-400079885" alt="iamge" />
-    <div className="items-description">
-    <h3>For Kids</h3>
-    <p>Get up To 1s0% Off</p>
-    <Link to='#'>
-    SHOP NOW 
-    </Link>
-    </div>
-    </div>
-      </Link>
-      </div>
-    )
-  };
-  
-  export default  HeroItems;
+export default HeroItems;

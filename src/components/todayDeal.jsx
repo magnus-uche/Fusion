@@ -17,7 +17,7 @@ const TodayDeal = ({deal, className, title }) => {
     <section className="deal_item_container">
     <ul className='deal_list'>
       {deal.map((deal, index) => {
-        const { discount, id, initialPrice, source1, source2, image, title } = deal;
+        const { discount, id, initialPrice,image, title } = deal;
         const getCurrentPrice = (price, discount) => {
           return (price / 100) * discount;
         };
@@ -29,14 +29,7 @@ const TodayDeal = ({deal, className, title }) => {
             <Link to={`/products/${id}`} className='link-left '>
               <span className='discount'>{`${discount}%`}</span>
               <div className="picture_section">
-                <picture>
-                  <source datasrcset={source1.dataSrcSet} media={source1.media} srcSet={source1.srcset} />
-
-                  <source datasrcset={source2.dataSrcSet} media={source2.media} srcSet={source2.srcset} />
-
-                  <img dataexpand={image.dataExpand} datasrc={image.datasrc} alt={image.alt} className="picture_image" src={image.src} />
-
-                </picture>
+                  <img alt={image.alt} className="picture_image" src={image.src} />
               </div>
               <div className='second'>
                 <h3 className="main-items">{title}</h3>

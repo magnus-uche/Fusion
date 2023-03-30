@@ -39,7 +39,6 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     const unscribe = onAuthStateChangeListener((user) => {
       if (user) {
-        // console.log('ghhh',user);
         createUserDocumentFromAuth(user);
       }
       setCurrentUser(user);
@@ -59,8 +58,6 @@ const AppProvider = ({ children }) => {
       const newItem = {
         ...item,
         ["amount"]: 1,
-        ["source2"]: "input image",
-        ["source1"]: "input image",
         ["intialPrice"]: item.price,
       };
       return newItem;

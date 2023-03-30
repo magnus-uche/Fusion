@@ -1,0 +1,8 @@
+.hero-container {
+    display: flex;
+    gap: 1em;
+}
+
+.hero-container img {
+    width: 310px;
+}
