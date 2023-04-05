@@ -12,7 +12,7 @@ import TodayDeal from "./todayDeal";
 
 const ProductItem = () => {
   const { products } = useGlobalContext();
-
+  
   const getDataById = (arr, id) => {
     const item = [];
     for (let index = 0; index < arr.length; index++) {
@@ -22,7 +22,8 @@ const ProductItem = () => {
     }
     return item;
   };
-
+  
+ 
   const sponsoredItem = getDataById(todaysdeal, [27, 34, 29, 25, 32, 35]);
   const todays_deal = getDataById(todaysdeal, [23, 30, 26, 28, 24, 36]);
 

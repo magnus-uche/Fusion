@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
-import Product from './Product';
+import React from 'react';
 import './todayDeal.css';
 import { Link } from 'react-router-dom';
-import { todaysdeal } from '../data';
+
 
 
 

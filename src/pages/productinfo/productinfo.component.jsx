@@ -2,10 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import AddCart from "../components/AddCart";
 import AddCart from "../../components/AddCart";
 import { useGlobalContext } from "../../Context";
-// import Loading from "../components/Loading";
 import Loading from "../../components/Loading";
 import './productinfo.styles.css'
 
@@ -13,6 +11,7 @@ const url = "https://fakestoreapi.com/products/1";
 
 const ProductInfo = () => {
   const { id } = useParams();
+  console.log('id', id)
   const {isLoading,addCart, products} = useGlobalContext();
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState(null);
