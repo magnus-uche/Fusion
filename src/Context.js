@@ -8,14 +8,14 @@ import {
 } from "react";
 import { reducer } from "./reducer";
 import { todaysdeal } from "./data";
+import { heroImage } from "./data";
 import {
   onAuthStateChangeListener,
   createUserDocumentFromAuth,
+  getCategoriesAndDocuments
 } from "./utils/firebase/firebase.util";
 const AppContext = React.createContext();
 const url = "https://fakestoreapi.com/products";
-// import {onAuthStateChangedListener, createUserDocumentFromAuth} from '../utils/firebase/firebase.util';
-console.log("todaysdeal :>> ", todaysdeal, url);
 
 const initialState = {
   cartProduct: [],
@@ -27,6 +27,9 @@ const initialState = {
 };
 
 const AppProvider = ({ children }) => {
+  const [fireData, setFireData] = useState([]);
+  console.log("fire",fireData);
+
   const [currentUser, setCurrentUser] = useState(null);
   const [state, dispatch] = useReducer(reducer, initialState);
   const [isLoading, setIsLoading] = useState(false);
@@ -45,6 +48,7 @@ const AppProvider = ({ children }) => {
     });
     return unscribe;
   }, []);
+
 
   const fetchData = useCallback(async () => {
     const response = await fetch(url);
@@ -65,10 +69,47 @@ const AppProvider = ({ children }) => {
     const deals = todaysdeal.map((item) => {
       return { ...item, ["amount"]: 1 };
     });
+    const heroImg = heroImage.map((item) => {
+      return { ...item, ["amount"]: 1 };
+    });
 
     // merge the url data and base data
-    const newData = [...data, ...deals];
-
+    const newData = [...data, ...deals, ...heroImg];
+    
+    const getItem = (arr, id) => {
+      const items = new Map();
+  
+      for (let index = 0; index < arr.length; index++) {
+        if (id.includes(arr[index].category)) {
+          const category = arr[index].category;
+          if (!items.has(category)) {
+            items.set(category, []);
+          }
+          items.get(category).push(arr[index]);
+        }
+      }
+      
+      const categories = Array.from(items.keys());
+      const result = [];
+      for (let i = 0; i < categories.length; i++) {
+        const category = categories[i];
+        const categoryItems = items.get(category);
+        result.push({ title: category, items: categoryItems });
+      }
+      return result;
+    
+      };
+    const getitems = getItem(newData, [
+      "electronics",
+      "computer",
+      "jewelery",
+      "phone",
+      "bags",
+      "men's clothing",
+      "women's clothing",
+      "kids",
+    ]);
+    setFireData(getitems)
     dispatch({ type: "UPDATE-PRODUCT", payload: newData });
     setIsLoading(false);
   }, [searchField]);
@@ -76,6 +117,15 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     fetchData();
   }, [searchField]);
+
+  
+  useEffect(()=>{
+    const getCategoriesMap = async ()=> {
+     const categoryMap = await getCategoriesAndDocuments()
+     console.log(categoryMap);
+    }
+    getCategoriesMap()
+   },[])
 
   useEffect(() => {
     dispatch({ type: "GET_TOTAL" });
@@ -94,7 +144,6 @@ const AppProvider = ({ children }) => {
   };
 
   const addCart = (id) => {
-    console.log("id", id);
     dispatch({ type: "ADD-TO-CART", payload: id });
   };
 

@@ -12,7 +12,7 @@ const TodayDeal = ({deal, className, title }) => {
     <div className="today-container">
     <div className='todays_deal todays_deal-1'>
       <h2 className='todays_deal-tittle'><span>{title}</span></h2>
-      <Link to='#' className='see_all_link'>{`${title ==  "Today's Deal" ? 'See All Items' : ''}`}</Link>
+      <Link to='#' className='see_all_link'>{`${title ===  "Today's Deal" ? 'See All Items' : ''}`}</Link>
     </div>
     <section className="deal_item_container">
     <ul className='deal_list'>
@@ -29,10 +29,10 @@ const TodayDeal = ({deal, className, title }) => {
             <Link to={`/products/${id}`} className='link-left '>
               <span className='discount'>{`${discount}%`}</span>
               <div className="picture_section">
-                  <img alt={image.alt} className="picture_image" src={image.src} />
+                  <img alt={image} className="picture_image" src={image} />
               </div>
               <div className='second'>
-                <h3 className="main-items">{title}</h3>
+                <h3 className="main-items">{`${title.slice(0,22)}...`}</h3>
                 <div className="price-section-left">
                   <span className="tag">
                     <span className="money-sign" style={{

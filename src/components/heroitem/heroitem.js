@@ -1,13 +1,13 @@
 import react from "react";
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
-import { caroImage } from "../../data";
+import { heroImage } from "../../data";
 import './heroitem.css'
 
 const HeroItems = () => {
   return (
     <div className="hero-container">
-      {caroImage.map((item) => {
+      {heroImage.map((item) => {
         const { image, title, category } = item
         return (
           <Fragment key={item.id}>

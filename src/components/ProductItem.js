@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Product from "./Product";
+// import Product from "./Product";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context";
 import HeroItems from "./heroitem/heroitem";
@@ -24,7 +24,7 @@ const ProductItem = () => {
   };
 
   const sponsoredItem = getDataById(todaysdeal, [27, 34, 29, 25, 32, 35]);
-  const todays_deal = getDataById(todaysdeal, [23, 30, 21, 29, 24, 36]);
+  const todays_deal = getDataById(todaysdeal, [23, 30, 26, 28, 24, 36]);
 
   return (
     <>
