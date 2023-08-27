@@ -41,6 +41,7 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     const unscribe = onAuthStateChangeListener((user) => {
+
       if (user) {
         createUserDocumentFromAuth(user);
       }
@@ -91,6 +92,7 @@ const AppProvider = ({ children }) => {
     const getCategoriesMap = async ()=> {
      const categoryMap = await getCategoriesAndDocuments()
      console.log('categoryMap :>> ', categoryMap);
+
      dispatch({ type: "UPDATE-PRODUCT", payload: categoryMap });
      setIsLoading(false);
     }

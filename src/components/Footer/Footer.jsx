@@ -31,11 +31,11 @@ const Footer = () => {
           type="email"
           name="email"
           value={email}
+          placeholder="email"
           className='subscribe'
           onChange={handleChange}
           />
           <button type="submit" className="btn-submit">Subscribe</button>
-          
           </form>
           </div>
       </div>
@@ -53,19 +53,14 @@ const Social = ({ title, redirect, label, logo }) => {
 
   return (
     <div className="social">
-    <div className="circle">
-    {logo}
-    </div>
-    <div className="social-connect">
     <div className="nav-social">
-    <p>{title}</p>
+    <span style={{paddingRight: 10}}>{logo}</span><p>{title}</p>
     {label.map((item,index)=>{
       return(
         <li key={index} ><Link to={redirect} className="link-connect">{item}</Link></li>
         )
       })}
       </div>
-    </div>
     </div>
     );
   }; 

@@ -12,7 +12,12 @@ import TodayDeal from "./todayDeal";
 
 const ProductItem = () => {
   const { products } = useGlobalContext();
-  
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
   const getDataById = (arr, id) => {
     const item = [];
     for (let index = 0; index < arr.length; index++) {
@@ -22,70 +27,79 @@ const ProductItem = () => {
     }
     return item;
   };
-  
- 
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const sponsoredItem = getDataById(todaysdeal, [27, 34, 29, 25, 32, 35]);
   const todays_deal = getDataById(todaysdeal, [23, 30, 26, 28, 24, 36]);
 
+  const handleVeiw =  () => {
+  setScreenWidth(707)
+  }
+
   return (
     <>
-    <section className="product_item_container">
-      <Categories />
-      <div className="hero-title">
-        <Carosel />
-      </div>
-      <div className="hero_categories">
-        {heroCategories.map((category, index) => {
-          const { linkTittle, link } = category;
+      <section className="product_item_container">
+        <Categories />
+        <div className="hero-title">
+          <Carosel />
+        </div>
+        <div className="hero_categories">
+          {heroCategories.map((category, index) => {
+            const { linkTittle, link } = category;
 
-          return (
-            <Link to={link} key={index}>
-              <button>{linkTittle}</button>
-            </Link>
-          );
-        })}
-      </div>
-      <TodayDeal
-        deal={todays_deal}
-        title="Today's Deal"
-        ClassName="deal_list"
-      />
+            return (
+              <Link to={link} key={index}>
+                {/* <button>{linkTittle}</button> */}
+              </Link>
+            );
+          })}
+        </div>
+        <TodayDeal
+          deal={todays_deal}
+          title="Today's Deal"
+          ClassName="deal_list"
+        />
 
-      <div className="divider"></div>
+        <div className="divider"></div>
 
-      <TodayDeal deal={sponsoredItem} title="sponsored" className="sponsor" />
-      <div className="products-center">
-        <HeroItems />
-      </div>
+        <TodayDeal deal={sponsoredItem} title="sponsored" className="sponsor" />
+        <div className="products-center">
+          <HeroItems />
+        </div>
 
-      <h4>kundum Top Nigerian shopping site.</h4>
-      <p>
-        We are an online shopping destination that offers a wide range of
-        products at competitive prices. Sed volutpat metus sed bibendum mollis.
-        Our selection includes electronics, mobile phones, computers, fashion,
-        beauty products, home and kitchen goods, construction materials, and
-        other high-end brands. Nulla tincidunt orci in turpis bibendum, eu
-        vestibulum ipsum eleifend. Additionally, we offer food and drinks,
-        automotive and industrial equipment, books, musical instruments, items
-        for babies and kids, sports and fitness, and more. Our platform is
-        designed to make your shopping experience swift and hassle-free, with
-        features like gift vouchers, consumer promotions, and delivery for bulk
-        purchases. Aenean luctus mauris nisi, vel tincidunt tellus feugiat in.
-        We also offer free shipping on select items, discounted shipping rates
-        for bulk purchases, and flexible payment options, including debit card
-        payments and secure payment solutions. Aliquam eget eros vel quam
-        fermentum eleifend at ac dolor. Don't miss out on the biggest sales
-        online, which take place on special dates throughout the year. Donec
-        pharetra nibh ac orci iaculis, in luctus magna euismod. Shop with us for
-        the best lifestyle services online. Nulla facilisi.
-      </p>
+        <h4>kundum Top Nigerian shopping site.</h4>
+        <p>
+          Experience shopping redefined at Kundum, Nigeria's leading online
+          marketplace. Explore a vast array of products at unbeatable prices,
+          catering to your every need. From electronics to fashion, home goods
+          to beauty essentials, we curate quality and variety{" "}
+          {screenWidth < 700 ? (
+          <span><p onClick={handleVeiw} style={{color: "#ff479d", fontSize: "0.8em"}}>View more...</p></span>
+          ) : (
+            <>
+              Our platform offers a seamless journey with gift vouchers,
+              promotions, and swift bulk delivery options. Whether you're a tech
+              enthusiast, a fashionista, or a home decor aficionado, Kundum is
+              your one-stop shop. Enjoy free shipping on select items,
+              discounted rates for bulk orders, and secure payment solutions.
+              Don't miss our exclusive online sales events, timed perfectly for
+              special occasions. At Kundum, shopping is a pleasure. Embrace
+              lifestyle excellence with ease, convenience, and the finest
+              products. Discover Kundum today.
+            </>
+          )}
+        </p>
+      
       </section>
-      <Footer/>
+      <Footer />
     </>
-
   );
 };
 
 export default ProductItem;
-
-

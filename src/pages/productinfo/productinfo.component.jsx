@@ -11,8 +11,9 @@ const url = "https://fakestoreapi.com/products/1";
 
 const ProductInfo = () => {
   const { id } = useParams();
-  console.log('id', id)
+  // console.log('id nn', id)
   const {isLoading,addCart, products} = useGlobalContext();
+  console.log("product xheck" ,products);
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState(null);
 
@@ -21,6 +22,7 @@ const ProductInfo = () => {
     let useParamsId = Number(id);
     if(useParamsId > 21){
       const newProduct = products.find((item)=>{
+        console.log("check",item)
             return item.id === useParamsId;
           });
           setProduct(newProduct) 

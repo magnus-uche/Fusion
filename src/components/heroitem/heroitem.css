@@ -4,5 +4,18 @@
 }
 
 .hero-container img {
-    width: 310px;
+    width: 100%;
+    max-width: 295px;
 }
+
+@media (max-width: 600px) {
+    .items-description p {
+   font-size: 0.8rem;
+    }
+     .shop_now{
+    font-size: 0.8rem;
+    }
+}
+
+
+

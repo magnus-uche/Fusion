@@ -11,13 +11,13 @@ const HeroItems = () => {
         const { image, title, category } = item
         return (
           <Fragment key={item.id}>
-          <div>
+          <div className="ads">
           <Link to='#'>
           <img src={image} alt={category} />
             </Link>
             <div className="items-description">
             <p>Get up To 10% Off</p>
-            <Link to='#'>
+            <Link to='#'  className="shop_now">
             SHOP NOW
             </Link>
             </div>

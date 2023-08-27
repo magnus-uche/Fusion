@@ -34,6 +34,7 @@ const SideBar = () => {
           </Link>
           <Link to="/" className="logo">
             Kundum
+            {/* NexTrade */}
           </Link>
         </div>
         <div className="nav_form">
