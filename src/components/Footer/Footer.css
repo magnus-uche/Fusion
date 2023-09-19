@@ -1,6 +1,9 @@
 footer {
   color: white;
   background-color: rgb(17, 17, 17);
+  border: 2px solid rgb(12, 12, 12);
+  width: 100%;
+
 }
 
 .footer-head {

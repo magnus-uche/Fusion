@@ -13,7 +13,7 @@ const Footer = () => {
   const handleChange = () => {};
 
   return (
-    <footer>
+    <footer  >
       <div className="footer-head">
         
         <div className="social-container">

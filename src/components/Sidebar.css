@@ -134,11 +134,11 @@
 }
 
 .login-signup {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 2em;
-padding: 1em 0 1em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  padding: 1em 0 1em 0;
 }
 
 .nav_menu_btn {
@@ -160,7 +160,6 @@ padding: 1em 0 1em 0;
   border: 1px thin gray;
   background-color: rgb(250, 248, 249);
   margin-bottom: 1rem;
-
 }
 
 .order_track {
@@ -168,9 +167,9 @@ padding: 1em 0 1em 0;
   align-items: center;
   border-color: #e2e2e2;
   border-style: solid;
-  border-width: .0625rem 0 0 0;
+  border-width: 0.0625rem 0 0 0;
   height: 3.125rem;
-  padding: 0 .25rem;
+  padding: 0 0.25rem;
   width: 50%;
   cursor: pointer;
 }
@@ -182,14 +181,14 @@ padding: 1em 0 1em 0;
 
 .order_track_title {
   color: #141414;
-  font-size: .8125rem;
+  font-size: 0.8125rem;
 }
 
 .order_track_paragraph {
   color: #0f0f0f;
   display: block;
-  font-size: .625rem;
-  margin-top: .125rem;
+  font-size: 0.625rem;
+  margin-top: 0.125rem;
 }
 
 .track_icons {
@@ -199,8 +198,8 @@ padding: 1em 0 1em 0;
 
 .footer {
   position: static;
-  height: 15vh;
-  padding: 1em 0 0 1em; 
+  /* height: 15vh; */
+  padding: 1em 0 0 1em;
   background-color: #ece6e6d0;
 }
 
@@ -232,16 +231,16 @@ padding: 1em 0 1em 0;
 .nav-menu-items {
   width: 100%;
   border-top: 2px solid gainsboro;
-  margin-right: 1em;
+  margin-right: 0.5em;
   margin-bottom: 8em;
 }
 
 .nav-menu-items p {
-margin-bottom: 0.4em;
-padding-top: 0.8em;
-padding-left: 0.8em ;
-font-weight: 600;
-font-size: 1.2rem;
+  margin-bottom: 0.4em;
+  padding-top: 0.8em;
+  padding-left: 0.8em;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .nav_categories {
@@ -290,14 +289,15 @@ font-size: 1.2rem;
   }
 }
 
-@media (min-width: 781px){
-.nav-menu {
-  left: -100%;
-  display: none;
-  background-color: #a51c65;
-}
+@media (min-width: 781px) {
+  .nav-menu {
+    left: -100%;
+    display: none;
+    background-color: #a51c65;
 
-/* .active-nav {
+  }
+
+  /* .active-nav {
   left: ;
   transition: 350ms;
 } */
@@ -307,12 +307,12 @@ font-size: 1.2rem;
   .nav_header {
     background-color: white;
   }
-
+  
   .nav_center {
     background-color: rgb(252, 249, 244);
     position: relative;
   }
-
+  
   .searchmedia {
     display: block;
   }
@@ -337,15 +337,15 @@ font-size: 1.2rem;
   .hambugar {
     color: gray;
   }
-
+  
   .nav_form {
     display: none;
   }
-
+  
   .account {
     display: none;
   }
-
+  
   .cart_section {
     position: relative;
     display: flex;
@@ -375,7 +375,7 @@ font-size: 1.2rem;
     width: 11px;
     height: 11px;
   }
-
+  
   .circle {
     background-color: green;
     color: var(--mainWhite);
@@ -389,9 +389,30 @@ font-size: 1.2rem;
   .nav_categories {
     display: none;
   }
-
+  
   .nav_cat_list {
     font-size: 1rem;
+  }
+
+  .nav-menu {
+    scroll-behavior: auto;
+      padding-top: 0.5rem;
+  }
+
+  .nav-menu-items {
+    
+  }
+
+  .nav-menu-items p {
+    font-size: 1rem;
+  }
+
+  .nav-menu-items .link-text {
+    font-size: 1rem;
+  }
+
+  .sidebar_footer {
+    /* border: 1px solid red; */
   }
 }
 /* end query */

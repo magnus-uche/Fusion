@@ -7,12 +7,13 @@ import './CartContainer.css'
 
 const CartContainer = ({image, title, price, id, amount }) => {
 const {increase, decrease, remove} = useGlobalContext();
+
   return (
     <section className="cart_item">
     <img src={image} className='cart-image' alt={title} style={{width :100}}/>
     <div className="cart-desc">
-    <h4>{title}</h4>
-    <h3>${price}</h3>
+    <p>{title}</p>
+    <p className='cart_item_price'>${price}</p>
     <div className="cart-quantity">
     <div className='cart_control'>
     <button className="minus" onClick={()=>decrease(id)}><FaMinus/></button>

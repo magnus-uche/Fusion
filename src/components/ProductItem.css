@@ -1,11 +1,11 @@
 .product_item_container {
-  padding: 6em 1.5rem;
+  padding: 5em  1.5rem;
   z-index: 0;
 }
 
 @media (max-width: 800px) {
   .product_item_container {
-    padding: 6em 1rem;
+    padding: 5em 1rem;
   }
 }
 

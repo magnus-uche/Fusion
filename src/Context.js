@@ -28,7 +28,7 @@ const initialState = {
 
 const AppProvider = ({ children }) => {
   const [fireData, setFireData] = useState([]);
-  console.log("fire",fireData);
+  console.log("fire", fireData);
 
   const [currentUser, setCurrentUser] = useState(null);
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -38,6 +38,7 @@ const AppProvider = ({ children }) => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const [isSubMenuOpen, SetIsSubMenuOpen] = useState(false);
   const [location, setLocation] = useState({});
+
 
   useEffect(() => {
     const unscribe = onAuthStateChangeListener((user) => {
@@ -146,6 +147,9 @@ const AppProvider = ({ children }) => {
   const closeSubmenu = () => {
     SetIsSubMenuOpen(false);
   };
+
+  console.log({...state});
+
 
   return (
     <AppContext.Provider

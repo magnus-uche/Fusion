@@ -38,9 +38,9 @@ const ProductItem = () => {
   const sponsoredItem = getDataById(todaysdeal, [27, 34, 29, 25, 32, 35]);
   const todays_deal = getDataById(todaysdeal, [23, 30, 26, 28, 24, 36]);
 
-  const handleVeiw =  () => {
-  setScreenWidth(707)
-  }
+  const handleVeiw = () => {
+    setScreenWidth(707);
+  };
 
   return (
     <>
@@ -80,7 +80,14 @@ const ProductItem = () => {
           catering to your every need. From electronics to fashion, home goods
           to beauty essentials, we curate quality and variety{" "}
           {screenWidth < 700 ? (
-          <span><p onClick={handleVeiw} style={{color: "#ff479d", fontSize: "0.8em"}}>View more...</p></span>
+            <span>
+              <p
+                onClick={handleVeiw}
+                style={{ color: "#ff479d", fontSize: "0.8em" }}
+              >
+                View more...
+              </p>
+            </span>
           ) : (
             <>
               Our platform offers a seamless journey with gift vouchers,
@@ -95,9 +102,8 @@ const ProductItem = () => {
             </>
           )}
         </p>
-      
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

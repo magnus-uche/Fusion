@@ -97,7 +97,7 @@ const SideBar = () => {
         <div className="login-signup">
           <button className="nav_menu_btn" >
             <Link to="/Login" className="login_link" onClick={loginWithGoogle}>
-              Login
+              Login 
             </Link>
           </button>
           <button className="nav_menu_btn">
